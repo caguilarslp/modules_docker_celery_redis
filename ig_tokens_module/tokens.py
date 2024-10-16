@@ -127,7 +127,7 @@ async def capture_instagram_queries(username, password):
         await page.click('button[type="submit"]')
 
         # Wait for login to complete
-        await page.wait_for_timeout(7000)
+        await page.wait_for_timeout(10000)
 
         # Extract tokens (csrf_token, session_id, ds_user_id)
         tokens = await extract_tokens_from_cookies(context)

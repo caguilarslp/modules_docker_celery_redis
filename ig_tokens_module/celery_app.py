@@ -1,5 +1,6 @@
 from celery import Celery
 import tokens  # Import the tokens.py script
+from tarea2 import print_hola
 import redis
 
 # Initialize Redis connection
@@ -22,6 +23,11 @@ def capture_instagram_queries_task(username, password):
     print(f"Tokens stored in Redis: {tokens_result}")
     
     return tokens_result  # Celery stores the result in Redis via Celery's backend
+
+# Tarea para imprimir 'Hola' desde tarea2.py
+@app.task
+def print_hola_task():
+    return print_hola()  # Llamamos a la función del módulo tarea2.py
 
 
 
