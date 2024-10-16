@@ -1,0 +1,32 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de caché y logs
+*.log
+*.pyc
+__pycache__/
+
+# Archivos del entorno de Python
+venv/
+.env
+*.env
+
+# Archivos de control de versiones
+.git
+.gitignore
+
+# Archivos de configuración locales
+*.local
+
+# Dependencias descargadas localmente
+node_modules/
+pip-wheel-metadata/
+
+# Caché de IDEs o archivos temporales
+.idea/
+.vscode/
+.tmp/
+
+# Excluir tokens_cache.json, output.txt y credentials.json del ignore
+# Los mantenemos ya que son pequeños y necesarios
