@@ -1,0 +1,35 @@
+version: '3'
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
+  celery_worker:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: celery -A celery_app worker --loglevel=info
+
+
+
+# version: '3'
+# services:
+#   redis:
+#     image: "redis:alpine"
+#     ports:
+#       - "6379:6379"
+
+#   worker:
+#     build: .
+#     volumes:
+#       - .:/app
+#     depends_on:
+#       - redis
+#     environment:
+#       - PYTHONUNBUFFERED=1
+#     command: celery -A celery_app worker --loglevel=info

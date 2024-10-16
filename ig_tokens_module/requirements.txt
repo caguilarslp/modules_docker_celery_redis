@@ -1,0 +1,6 @@
+playwright
+redis
+asyncio
+celery
+redis
+
