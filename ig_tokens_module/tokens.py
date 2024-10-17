@@ -87,6 +87,14 @@ class TokenManager:
     # Método principal para capturar tokens de Instagram
     async def capture_instagram_queries(self, username, password):
         async with async_playwright() as p:
+            
+            # Proxy configuration
+            # proxy = {
+            #     "server": "http://gate.smartproxy.com:10001",
+            #     "username": "user-spdauduoc2-asn-28403-os-android",
+            #     "password": "0rPak+0Puoi5Qsfj6C"
+            # }
+            
             logging.info("Launching browser with mobile proxy...")
             browser = await p.chromium.launch(headless=True)
 
@@ -107,7 +115,7 @@ class TokenManager:
 
             page = await context.new_page()
             logging.info("Navigating to the login page...")
-            await page.goto('https://www.instagram.com/')
+            await page.goto('https://www.instagram.com/', timeout=5000)
 
             # Inicio de sesión en Instagram
             logging.info(f"--- Logging in with user: {username} ---")
