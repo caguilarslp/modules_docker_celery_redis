@@ -1,4 +1,3 @@
-¡Genial que haya funcionado! Aquí te dejo una lista de los principales decoradores que ofrece Celery y sus funciones:
 
 ### 1. **@app.task**
    - **Función**: Este es el decorador principal que se utiliza para definir una tarea en Celery. Marca una función como tarea y permite que Celery la ejecute de manera asíncrona.
